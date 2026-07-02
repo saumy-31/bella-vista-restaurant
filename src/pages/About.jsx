@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { FaAward, FaStar, FaTrophy, FaWineGlassAlt } from 'react-icons/fa';
 
 const About = () => {
   return (
@@ -17,7 +18,7 @@ const About = () => {
             </p>
           </div>
           <div className="relative h-[600px]">
-            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80" alt="Chef plating" className="w-full h-full object-cover rounded-sm" />
+            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=800&q=80" alt="Chef plating" className="w-full h-full object-cover rounded-sm shadow-2xl" />
             <div className="absolute -bottom-6 -left-6 bg-gold p-8 max-w-xs shadow-2xl hidden md:block">
               <p className="text-dark font-serif text-xl italic">"Cooking is an art, but dining is an experience."</p>
             </div>
@@ -50,20 +51,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* Awards Section */}
+      {/* Awards Section (Fixed with Icons) */}
       <section className="py-24 max-w-7xl mx-auto px-4 md:px-8 text-center">
         <h3 className="text-gold uppercase tracking-widest text-sm mb-4">Recognition</h3>
         <h2 className="text-4xl font-serif text-white mb-16">Awards & Accolades</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            "2 Michelin Stars 2023",
-            "World's 50 Best Restaurants",
-            "James Beard Foundation Winner",
-            "Wine Spectator Grand Award"
+            { title: "2 Michelin Stars 2023", icon: <FaStar className="w-12 h-12 mx-auto mb-6 text-gold group-hover:scale-110 transition-transform duration-300" /> },
+            { title: "World's 50 Best Restaurants", icon: <FaTrophy className="w-12 h-12 mx-auto mb-6 text-gold group-hover:scale-110 transition-transform duration-300" /> },
+            { title: "James Beard Foundation Winner", icon: <FaAward className="w-12 h-12 mx-auto mb-6 text-gold group-hover:scale-110 transition-transform duration-300" /> },
+            { title: "Wine Spectator Grand Award", icon: <FaWineGlassAlt className="w-12 h-12 mx-auto mb-6 text-gold group-hover:scale-110 transition-transform duration-300" /> }
           ].map((award, idx) => (
-            <div key={idx} className="p-8 border border-gray-800 hover:border-gold transition-colors">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Michelin_star.svg" alt="Star" className="w-12 h-12 mx-auto mb-4 opacity-50" />
-              <h4 className="text-white font-serif">{award}</h4>
+            <div key={idx} className="p-8 border border-gray-800 hover:border-gold transition-colors group flex flex-col items-center justify-center">
+              {award.icon}
+              <h4 className="text-white font-serif text-lg">{award.title}</h4>
             </div>
           ))}
         </div>

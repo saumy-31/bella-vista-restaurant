@@ -64,7 +64,7 @@ const Reservations = () => {
             <p className="text-gray-400 leading-relaxed mb-6">
               Elevate your next corporate gathering, birthday celebration, or intimate wedding reception in our private dining rooms. Featuring dedicated service, customizable menus, and state-of-the-art audiovisual capabilities.
             </p>
-            <img src="https://images.unsplash.com/photo-1549488344-c11ccbb1d467?auto=format&fit=crop&w=800&q=80" alt="Private Dining" className="w-full h-64 object-cover border border-gray-800" />
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" alt="Private Dining" className="w-full h-64 object-cover border border-gray-800 shadow-xl" />
           </div>
 
           <div className="bg-darker p-8 border border-gray-800">

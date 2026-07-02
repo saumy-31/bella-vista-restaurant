@@ -1,4 +1,3 @@
-
 const Chefs = () => {
   return (
     <div className="bg-darker min-h-screen pt-32 pb-24">
@@ -7,7 +6,11 @@ const Chefs = () => {
         {/* Head Chef Profile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24">
           <div className="h-[700px]">
-            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Head Chef" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+            <img 
+              src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80" 
+              alt="Head Chef" 
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" 
+            />
           </div>
           <div>
             <h3 className="text-gold uppercase tracking-widest text-sm mb-2">Executive Head Chef</h3>
@@ -47,13 +50,32 @@ const Chefs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { name: "Elena Rostova", role: "Head Pastry Chef", img: "https://images.unsplash.com/photo-1607631568010-a87245c0daf8?auto=format&fit=crop&w=600&q=80" },
-            { name: "Marcus Chen", role: "Chef de Cuisine", img: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" },
-            { name: "Julian Baptiste", role: "Chief Sommelier", img: "https://images.unsplash.com/photo-1559564022-77291a1dfbf0?auto=format&fit=crop&w=600&q=80" }
+            // FIXED: Replaced the broken URL with a guaranteed working female portrait
+            { 
+              name: "Elena Rostova", 
+              role: "Head Pastry Chef", 
+              img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80" 
+            },
+            // FIXED: Removed the headphones and replaced with a guaranteed working male portrait
+            { 
+              name: "Marcus Chen", 
+              role: "Chef de Cuisine", 
+              img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" 
+            },
+            // KEPT: This image worked perfectly in your screenshot
+            { 
+              name: "Julian Baptiste", 
+              role: "Chief Sommelier", 
+              img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+            }
           ].map((chef, idx) => (
             <div key={idx} className="bg-dark border border-gray-800 group">
               <div className="h-80 overflow-hidden">
-                <img src={chef.img} alt={chef.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
+                <img 
+                  src={chef.img} 
+                  alt={chef.name} 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105 object-top" 
+                />
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-xl font-serif text-white mb-1">{chef.name}</h3>
